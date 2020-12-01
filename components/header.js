@@ -12,6 +12,7 @@ const Header = () => {
         },
         link: {
             margin: 15,
+            cursor: "pointer",
         },
         active: {
             margin: 15,
