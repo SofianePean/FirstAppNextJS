@@ -1,7 +1,9 @@
 import React from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
+import {useRouter} from 'next/router';
 
 const Header = () => {
+    const router = useRouter()
     const styles = {
         header : {
             marginBottom: 20,
@@ -10,28 +12,32 @@ const Header = () => {
         },
         link: {
             margin: 15,
+        },
+        active: {
+            margin: 15,
+            color: "blue",
         }
     }
     return (
         <div style={styles.header}>
             <Link href="/" passHref>
-                <span style={styles.link}>Home</span>
+                <span style={router.pathname === "/" ? styles.active : styles.link}>Home</span>
             </Link>
 
             <Link href="/blog" passHref>
-                <span style={styles.link}>Blog</span>
+                <span style={router.pathname === "/blog" ? styles.active : styles.link}>Blog</span>
             </Link>
 
             <Link href="/profile" passHref>
-                <span style={styles.link}>Profile</span>
+                <span style={router.pathname === "/profile" ? styles.active : styles.link}>Profile</span>
             </Link>
 
             <Link href="/blog/items" passHref>
-                <span style={styles.link}>Items</span>
+                <span style={router.pathname === "/blog/items" ? styles.active : styles.link}>Items</span>
             </Link>
 
             <Link href="/blog/categories" passHref>
-                <span style={styles.link}>Categories</span>
+                <span style={router.pathname === "/blog/categories" ? styles.active : styles.link}>Categories</span>
             </Link>
         </div>
     )
