@@ -21,6 +21,7 @@ const Blog = ({ posts }) => {
         },
         articles: {
             margin: 'auto',
+            marginTop: 30,
             marginBottom : 30,
             padding: 15,
             height: 550,
@@ -46,7 +47,6 @@ const Blog = ({ posts }) => {
             <title>Liste des articles</title>
             </Head>
             <Layout>
-            <h1 style={styles.title}>Cette page utilise getStaticProps</h1>
             <div style={styles.main}>
             {
                 posts.map(post => (

@@ -18,6 +18,8 @@ const Titre = ({ data }) => {
     }
     return (
         <>
+        {data && (
+            <>
             <Head>
                 <title>{data.title}</title>
             </Head>
@@ -30,6 +32,9 @@ const Titre = ({ data }) => {
                 <p>{data.description}</p>
             </div>
             </Layout>
+            </>
+        )}
+            
         </>
     )
 }

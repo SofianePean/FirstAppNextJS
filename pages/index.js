@@ -24,10 +24,9 @@ const Home = ({ data }) => {
     </Head>
     <Layout>
     <div style={styles.page}>
-    <h1 style={{textAlign: 'center', margin: 0, padding: 15}}>Cette page utilise getServerSideProps</h1>
       {
         data.map(region => (
-          <Link href="/region/[code]" as={`/region/${region.code}`} passHref>
+          <Link href="/region/[code]" as={`/region/${region.code}`} passHref key={region.code}>
             <div style={styles.div} key={region.code}>
               <h1 style={styles.h1}>{region.nom}</h1>
               <p>{region.code}</p>

@@ -12,11 +12,30 @@ const Departement = ({data}) => {
     }
     return (
         <>
+        {
+            data && (
+                <>
+                <Head>
+                    <title>Liste des départements</title>
+                </Head>
+                <Layout>
+                    {
+                        data.map(departement => (
+                            <div style={styles} key={departement.code}>
+                                <h1>{departement.nom}</h1>
+                                <div>Code de departement : {departement.code}</div>
+                                <div>Code de la région : {departement.codeRegion}</div>
+                            </div>
+                        ))
+                    }
+                </Layout>
+                </>
+            )
+        }
         <Head>
         <title>Liste des départements</title>
         </Head>
         <Layout>
-        <h1>Cette page utilise getInitialProps</h1>
             {
                 data.map(departement => (
                     <div style={styles} key={departement.code}>
@@ -30,13 +49,14 @@ const Departement = ({data}) => {
         </>
     )
 }
-
-Departement.getInitialProps = async(context) => {
+export const getStaticProps = async() => {
     const url = 'https://geo.api.gouv.fr/departements'
     const {data} = await axios.get(url);
 
     return {
-        data
+        props : {
+            data
+        }
     }
 }
 
