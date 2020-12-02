@@ -6,7 +6,7 @@ const Header = () => {
     const router = useRouter()
     const styles = {
         header : {
-            marginBottom: 20,
+            // marginBottom: 20,
             padding: 20,
             border: "1px solid #DDD"
         },
@@ -33,12 +33,12 @@ const Header = () => {
                 <span style={router.pathname === "/profile" ? styles.active : styles.link}>Profile</span>
             </Link>
 
-            <Link href="/blog/items" passHref>
-                <span style={router.pathname === "/blog/items" ? styles.active : styles.link}>Items</span>
-            </Link>
-
             <Link href="/blog/categories" passHref>
                 <span style={router.pathname === "/blog/categories" ? styles.active : styles.link}>Categories</span>
+            </Link>
+
+            <Link href="/departements" passHref>
+                <span style={router.pathname === "/blog/departements" ? styles.active : styles.link}>Départements</span>
             </Link>
         </div>
     )
