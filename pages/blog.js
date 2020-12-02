@@ -18,6 +18,8 @@ const Blog = ({ posts }) => {
             display: 'flex',
             minHeight: '100vh',
             flexWrap: 'wrap',
+            padding: 10,
+
         },
         articles: {
             margin: 'auto',

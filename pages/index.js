@@ -14,6 +14,7 @@ const Home = ({ data }) => {
       cursor: "pointer",
     },
     page: {
+      paddingTop: 20,
       backgroundColor: '#F3F3F3',
     }
   }
